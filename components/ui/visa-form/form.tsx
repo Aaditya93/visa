@@ -310,34 +310,9 @@ const VisaApplicationForm = () => {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name="creator"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Creator</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Aaditya" {...field} disabled/>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+             
 
-              <FormItem>
-                <FormLabel>Created Date</FormLabel>
-                <FormControl>
-                  <Input value={currentDateTime.date} readOnly />
-                </FormControl>
-              </FormItem>
-
-              <FormItem>
-                <FormLabel>Created Time</FormLabel>
-                <FormControl>
-                  <Input value={currentDateTime.time} readOnly />
-                </FormControl>
-              </FormItem>
-
+              
               <FormField
                 control={form.control}
                 name="speed"
