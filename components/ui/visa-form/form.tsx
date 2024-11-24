@@ -40,7 +40,7 @@ const VisaApplicationForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      code: "",
+      code: "1",
       full_name: "",
       birthday: "",
       sex: undefined,
@@ -89,7 +89,8 @@ const VisaApplicationForm = () => {
     <div className='w-full mt-4'>
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
-        <CardTitle>Visa Application Form</CardTitle>
+        <CardTitle>Visa Application Form  </CardTitle>
+        <span>Group 4</span>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -102,7 +103,7 @@ const VisaApplicationForm = () => {
                   <FormItem>
                     <FormLabel>Code</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter code" {...field} />
+                      <Input placeholder="1" {...field} disabled />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -316,7 +317,7 @@ const VisaApplicationForm = () => {
                   <FormItem>
                     <FormLabel>Creator</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter creator name" {...field} />
+                      <Input placeholder="Aaditya" {...field} disabled/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
