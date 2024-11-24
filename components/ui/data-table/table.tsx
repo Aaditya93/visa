@@ -37,115 +37,116 @@ import {
 } from "@/components/ui/table"
 
 const data: visa[] =[
-    {
-      No: 1,
-      Full_name: "ZHAO HEMING",
-      Birthday: "21/07/2022",
-      Sex: "Nam",
-      Current_nationality: "China",
-      Original_nationality: "",
-      Job: "Tự do",
-      Office: "",
-      Passport_number: "SM 30 EJ7492804",
-      Type_of_Passport_: "Hộ chiếu phổ thông",
-      Purpose: "du lịch",
-      From_Date_to_enter: "10/01/2025",
-      To_date: "09/02/2025",
-      Duration: "Một lần",
-      Place_to_get_visa: "Tổng lãnh sự quán Việt Nam tại Thượng Hải - Trung Quốc",
-      status: "success"
-    },
-    {
-        No: 1,
-        Full_name: "HAN XIREN",
-        Birthday: "21/07/2022",
-        Sex: "Nam",
-        Current_nationality: "China",
-        Original_nationality: "",
-        Job: "Tự do",
-        Office: "",
-        Passport_number: "SM 30 EJ7492804",
-        Type_of_Passport_: "Hộ chiếu phổ thông",
-        Purpose: "du lịch",
-        From_Date_to_enter: "10/01/2025",
-        To_date: "09/02/2025",
-        Duration: "Một lần",
-        Place_to_get_visa: "Tổng lãnh sự quán Việt Nam tại Thượng Hải - Trung Quốc",
-        status: "success"
-      },
-      
-      {
-        No: 1,
-        Full_name: "WANG WENHUI",
-        Birthday: "21/07/2022",
-        Sex: "Nam",
-        Current_nationality: "China",
-        Original_nationality: "",
-        Job: "Tự do",
-        Office: "",
-        Passport_number: "SM 30 EJ7492804",
-        Type_of_Passport_: "Hộ chiếu phổ thông",
-        Purpose: "du lịch",
-        From_Date_to_enter: "10/01/2025",
-        To_date: "09/02/2025",
-        Duration: "Một lần",
-        Place_to_get_visa: "Tổng lãnh sự quán Việt Nam tại Thượng Hải - Trung Quốc",
-        status: "success"
-      },
-      {
-        No: 1,
-        Full_name: "YANG XIAOYU",
-        Birthday: "21/07/2022",
-        Sex: "Nam",
-        Current_nationality: "China",
-        Original_nationality: "",
-        Job: "Tự do",
-        Office: "",
-        Passport_number: "SM 30 EJ7492804",
-        Type_of_Passport_: "Hộ chiếu phổ thông",
-        Purpose: "du lịch",
-        From_Date_to_enter: "10/01/2025",
-        To_date: "09/02/2025",
-        Duration: "Một lần",
-        Place_to_get_visa: "Tổng lãnh sự quán Việt Nam tại Thượng Hải - Trung Quốc",
-        status: "success"
-      },
-      {
-        No: 1,
-        Full_name: "KONG HUI",
-        Birthday: "21/07/2022",
-        Sex: "Nam",
-        Current_nationality: "China",
-        Original_nationality: "",
-        Job: "Tự do",
-        Office: "",
-        Passport_number: "SM 30 EJ7492804",
-        Type_of_Passport_: "Hộ chiếu phổ thông",
-        Purpose: "du lịch",
-        From_Date_to_enter: "10/01/2025",
-        To_date: "09/02/2025",
-        Duration: "Một lần",
-        Place_to_get_visa: "Tổng lãnh sự quán Việt Nam tại Thượng Hải - Trung Quốc",
-        status: "success"
-      },
-      {
-        No: 1,
-        Full_name: "ZHAO HEMING",
-        Birthday: "21/07/2022",
-        Sex: "Nam",
-        Current_nationality: "China",
-        Original_nationality: "",
-        Job: "Tự do",
-        Office: "",
-        Passport_number: "SM 30 EJ7492804",
-        Type_of_Passport_: "Hộ chiếu phổ thông",
-        Purpose: "du lịch",
-        From_Date_to_enter: "10/01/2025",
-        To_date: "09/02/2025",
-        Duration: "Một lần",
-        Place_to_get_visa: "Tổng lãnh sự quán Việt Nam tại Thượng Hải - Trung Quốc",
-        status: "pending"
-      },
+  {
+    No: 1,
+    Full_name: "ZHAO HEMING",
+    Birthday: "21/07/2022",
+    Sex: "Nam",
+    Current_nationality: "China",
+    Original_nationality: "",
+    Job: "Tự do",
+    workplace: "SM 30",
+    Passport_number: "EJ7492804",
+    Type_of_Passport: "ordinary passport",
+    Purpose: "du lịch",
+    From_Date_to_enter: "10/01/2025",
+    To_date: "09/02/2025",
+    Duration: "Single entry",
+    Place_to_get_visa: "Hanoi Airport",
+    Creator: "Vaibhav",
+    Created_date: "23-Nov",
+    Created_time: "20:00",
+    Speed: "Urgent 4 hours",
+    Status: "Cancelled"
+  },
+  {
+    No: 2,
+    Full_name: "HAN XIREN",
+    Birthday: "07/03/1990",
+    Sex: "Nam",
+    Current_nationality: "China",
+    Original_nationality: "",
+    Job: "Tự do",
+    workplace: "SM 15",
+    Passport_number: "EJ3199156",
+    Type_of_Passport: "Hộ chiếu phổ thông",
+    Purpose: "du lịch",
+    From_Date_to_enter: "23/12/2024",
+    To_date: "07/01/2025",
+    Duration: "Mutiple entry",
+    Place_to_get_visa: "Hanoi Airport",
+    Creator: "Nikhil",
+    Created_date: "24-Nov",
+    Created_time: "10:00",
+    Speed: "Urgent 4 hours",
+    Status: "success"
+  },
+  {
+    No: 3,
+    Full_name: "WANG WENHUI",
+    Birthday: "18/02/1998",
+    Sex: "Nữ",
+    Current_nationality: "China",
+    Original_nationality: "",
+    Job: "Tự do",
+    workplace: "SM 15",
+    Passport_number: "EM5413874",
+    Type_of_Passport: "Hộ chiếu phổ thông",
+    Purpose: "du lịch",
+    From_Date_to_enter: "01/04/2025",
+    To_date: "16/04/2025",
+    Duration: "Single entry",
+    Place_to_get_visa: "Ho Chi minh Airport",
+    Creator: "Victor",
+    Created_date: "25-Nov",
+    Created_time: "11:00",
+    Speed: "Urgent 2 days",
+    Status: "success"
+  },
+  {
+    No: 4,
+    Full_name: "YANG XIAOYU",
+    Birthday: "29/04/1995",
+    Sex: "Nữ",
+    Current_nationality: "China",
+    Original_nationality: "",
+    Job: "Tự do",
+    workplace: "SM 15",
+    Passport_number: "EH1965055",
+    Type_of_Passport: "Hộ chiếu phổ thông",
+    Purpose: "du lịch",
+    From_Date_to_enter: "06/12/2024",
+    To_date: "21/12/2024",
+    Duration: "Single entry",
+    Place_to_get_visa: "Hanoi Airport",
+    Creator: "Jena",
+    Created_date: "24-Nov",
+    Created_time: "10:30",
+    Speed: "Urgent 3 days",
+    Status: "success"
+  },
+  {
+    No: 5,
+    Full_name: "KONG HUI",
+    Birthday: "20/06/1978",
+    Sex: "Nữ",
+    Current_nationality: "China",
+    Original_nationality: "",
+    Job: "Tự do",
+    workplace: "SM 15",
+    Passport_number: "EJ4646564",
+    Type_of_Passport: "Hộ chiếu phổ thông",
+    Purpose: "du lịch",
+    From_Date_to_enter: "24/12/2024",
+    To_date: "08/01/2025",
+    Duration: "Single entry",
+    Place_to_get_visa: "Embassy in India",
+    Creator: "Jena",
+    Created_date: "23-Nov",
+    Created_time: "1:30",
+    Speed: "Urgent 3 days",
+    Status: "Cancelled"
+  }
 
   ]
   
@@ -153,7 +154,7 @@ const data: visa[] =[
 export type visa = {
   id: string
   amount: number
-  status: "pending" | "processing" | "success" | "failed"
+  status: "pending" | "processing" | "success" | "failed" | "Cancelled"
   email: string
 }
 
@@ -181,6 +182,13 @@ export const columns: ColumnDef<visa>[] = [
     enableHiding: false,
   },
   {
+    accessorKey: "No",
+    header: "Code",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("No")}</div>
+    ),
+  },
+  {
     accessorKey: "Full_name",
     header: ({ column }) => {
       return (
@@ -204,11 +212,19 @@ export const columns: ColumnDef<visa>[] = [
       <div className="capitalize">{row.getValue("Birthday")}</div>
     ),
   },
+ 
   {
-    accessorKey: "Sex",
-    header: "Sex",
+    accessorKey: "Job",
+    header: "Job",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("Sex")}</div>
+      <div className="capitalize">{row.getValue("Job")}</div>
+    ),
+  },
+  {
+    accessorKey: "workplace",
+    header: "Workplace",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("workplace")}</div>
     ),
   },
   {
@@ -241,10 +257,10 @@ export const columns: ColumnDef<visa>[] = [
   },
  
   {
-    accessorKey: "Type_of_Passport_",
+    accessorKey: "Type_of_Passport",
     header: "Type of Passport",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("Type_of_Passport_")}</div>
+      <div className="capitalize">{row.getValue("Type_of_Passport")}</div>
     ),
   },
   {
@@ -269,10 +285,39 @@ export const columns: ColumnDef<visa>[] = [
     ),
   },
   {
-    accessorKey: "status",
+    accessorKey: "Creator",
+    header: "Creator",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("Creator")}</div>
+    ),
+  },
+  {
+    accessorKey: "Created_date",
+    header: "Created Date",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("Created_date")}</div>
+    ),
+  },
+  
+  {
+    accessorKey: "Created_time",
+    header: "Created Time",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("Created_time")}</div>
+    ),
+  },
+  {
+    accessorKey: "Speed",
+    header: "Speed",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("Speed")}</div>
+    ),
+  },
+  {
+    accessorKey: "Status",
     header: "Status",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="capitalize">{row.getValue("Status")}</div>
     ),
   },
  
