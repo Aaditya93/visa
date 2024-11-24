@@ -96,19 +96,7 @@ const VisaApplicationForm = () => {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <div className="grid grid-cols-3 gap-4">
-              <FormField
-                control={form.control}
-                name="code"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Code</FormLabel>
-                    <FormControl>
-                      <Input placeholder="1" {...field} disabled />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+             
 
               <FormField
                 control={form.control}
@@ -188,34 +176,9 @@ const VisaApplicationForm = () => {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name="job"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Job</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter job" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+           
 
-              <FormField
-                control={form.control}
-                name="workplace"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Workplace</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter workplace" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
+         
               <FormField
                 control={form.control}
                 name="passport_number"
@@ -238,20 +201,6 @@ const VisaApplicationForm = () => {
                     <FormLabel>Type of Passport</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter passport type" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="purpose"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Purpose</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter purpose" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
