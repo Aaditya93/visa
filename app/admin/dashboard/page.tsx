@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/sidebar"
 import { DataTableDemo } from "@/components/ui/data-table/table"
 
-export function Page() {
+const DashboardPage =() => {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -48,4 +48,4 @@ export function Page() {
   )
 }
 
-export default Page;
+export default DashboardPage;

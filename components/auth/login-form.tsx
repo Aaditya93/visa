@@ -12,14 +12,13 @@ import { login } from '@/actions/auth/login';
 import { useTransition, useState} from 'react';
 import { FormError } from './form-error';
 import { FormSuccess } from './form-success';
-import { useSearchParams } from 'next/navigation';
+
 
 
 
 export const LoginForm = () =>{
-    const searchParams = useSearchParams();
-    const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? 
-    "This email is already registered. with a diffrent Provider" : ""
+
+    
     const [error, setError] = useState<string | undefined>("");
     const [success, setScuccess] = useState<string | undefined>("");
     const [isPending, startTransition] = useTransition();
@@ -86,7 +85,7 @@ export const LoginForm = () =>{
                   )}
                 />
                 <FormSuccess message={success} />
-                <FormError message={error || urlError} />
+                <FormError message={error } />
                 <LoginButton/>
               
                 
