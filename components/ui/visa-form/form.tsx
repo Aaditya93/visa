@@ -243,19 +243,56 @@ const VisaApplicationForm = () => {
                       </FormItem>
                     )}
                   />
+                     <FormField
+                    control={form.control}
+                    name="Handled_by"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Handled By</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Handled By" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
 
                   
                  
                    <FormField
                     control={form.control}
-                    name="place_to_get_visa"
+                    name="Airport"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Place to Get Visa</FormLabel>
+                        <FormLabel>Airport</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
-                              <SelectValue placeholder="Select visa location" />
+                              <SelectValue placeholder="Select Airport" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Hanoi Airport">Hanoi Airport</SelectItem>
+                            <SelectItem value="Ho Chi Minh Airport">Ho Chi Minh Airport</SelectItem>
+                            <SelectItem value="Da Nang Airport">Da Nang Airport</SelectItem>
+                            <SelectItem value="Phuquoc Airport">Phuquoc Airport</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="Embassy"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Embassy</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select Embassy" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
@@ -265,10 +302,7 @@ const VisaApplicationForm = () => {
                             <SelectItem value="Vietnam embassy in Beijing ">Vietnam embassy in Beijing</SelectItem>
                             <SelectItem value="Vietnam embassy in Guangzhou">Vietnam embassy in Guangzhou</SelectItem>
                             <SelectItem value="Vietnam embassy in Taiwan ">Vietnam embassy in Taiwan</SelectItem>
-                            <SelectItem value="Hanoi Airport">Hanoi Airport</SelectItem>
-                            <SelectItem value="Ho Chi Minh Airport">Ho Chi Minh Airport</SelectItem>
-                            <SelectItem value="Da Nang Airport">Da Nang Airport</SelectItem>
-                            <SelectItem value="Phuquoc Airport">Phuquoc Airport</SelectItem>
+                           
                           </SelectContent>
                         </Select>
                         <FormMessage />
