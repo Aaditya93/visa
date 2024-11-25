@@ -1,5 +1,7 @@
 "use client"
 
+import { CiSearch } from "react-icons/ci";
+import { IoIosQrScanner } from "react-icons/io";
 import * as React from "react"
 import { BsPassport } from "react-icons/bs";
 import { CiFileOn } from "react-icons/ci";
@@ -172,6 +174,16 @@ const data = {
       name: "Upload Passport",
       url: "/upload/passport",
       icon: BsPassport,
+    },
+    {
+      name: "Scan Passport",
+      url: "/scan-passport",
+      icon: IoIosQrScanner,
+    },
+    {
+      name: "Search",
+      url: "/search",
+      icon: CiSearch,
     },
    
   ],
