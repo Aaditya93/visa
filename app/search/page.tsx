@@ -87,6 +87,16 @@ const VisaSearch = () => {
             />
           </div>
           <div className="space-y-2">
+            <label className="text-sm font-medium">Code</label>
+            <Input
+              placeholder="Search by name"
+              value={searchFilters.name}
+              onChange={(e) =>
+                setSearchFilters({ ...searchFilters, name: e.target.value })
+              }
+            />
+          </div>
+          <div className="space-y-2">
             <label className="text-sm font-medium">Nationality</label>
             <Select
               value={searchFilters.nationality}
@@ -261,7 +271,9 @@ const VisaSearch = () => {
 
         <div className="flex justify-end mb-6">
           <Button onClick={handleSearch}>Search</Button>
+          <Button  className ="ml-4"onClick={handleSearch}>Download Excel</Button>
         </div>
+       
 
         <Table>
           <TableHeader>
