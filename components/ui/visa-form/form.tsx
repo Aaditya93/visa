@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   code: z.string().min(1, "Code is required"),
   full_name: z.string().min(2, "Name must be at least 2 characters"),
   birthday: z.string().min(1, "Birthday is required"),
@@ -86,255 +86,294 @@ const VisaApplicationForm = () => {
   };
 
   return (
-    <div className='w-full mt-4'>
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader>
-        <CardTitle>Visa Application Form  </CardTitle>
-        <span>Group 4</span>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <div className="grid grid-cols-3 gap-4">
-             
-
-              <FormField
-                control={form.control}
-                name="full_name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Full Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter full name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="birthday"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Birthday</FormLabel>
-                    <FormControl>
-                      <Input type="date" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="sex"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Sex</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select Sex" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Nam">Nam</SelectItem>
-                        <SelectItem value="Nữ">Nữ</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="current_nationality"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Current Nationality</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter current nationality" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="original_nationality"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Original Nationality</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter original nationality" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-           
-
-         
-              <FormField
-                control={form.control}
-                name="passport_number"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Passport Number</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter passport number" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="passport_type"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Type of Passport</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter passport type" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="from_date"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>From Date</FormLabel>
-                    <FormControl>
-                      <Input type="date" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="to_date"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>To Date</FormLabel>
-                    <FormControl>
-                      <Input type="date" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormItem>
-                <FormLabel>Duration</FormLabel>
-                <FormControl>
-                  <Input 
-                    value={calculateDuration(form.watch('from_date'), form.watch('to_date'))} 
-                    readOnly 
+    <div className="w-full mt-4">
+      <Card className="w-full max-w-4xl mx-auto">
+        <CardHeader>
+          <CardTitle>Visa Application Form</CardTitle>
+          <span>Group 4</span>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+     
+              <Card className="border-2">
+                <CardHeader>
+                  <CardTitle className="text-lg">Passport Details</CardTitle>
+                </CardHeader>
+                <CardContent className="grid grid-cols-3 gap-4">
+                <FormField
+                    control={form.control}
+                    name="full_name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Full Name</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter full name" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </FormControl>
-              </FormItem>
 
-              <FormField
-                control={form.control}
-                name="place_to_get_visa"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Place to Get Visa</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter visa location" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                  <FormField
+                    control={form.control}
+                    name="birthday"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Birthday</FormLabel>
+                        <FormControl>
+                          <Input type="date" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-             
+                  <FormField
+                    control={form.control}
+                    name="sex"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Sex</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select Sex" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Nam">Nam</SelectItem>
+                            <SelectItem value="Nữ">Nữ</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              
-              <FormField
-                control={form.control}
-                name="speed"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Speed</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select Speed" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="normal">Normal</SelectItem>
-                        <SelectItem value="urgent">Urgent</SelectItem>
-                        <SelectItem value="express">Express</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                  <FormField
+                    control={form.control}
+                    name="current_nationality"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Current Nationality</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter current nationality" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              <FormField
-                control={form.control}
-                name="status"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Status</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select Status" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="pending">Pending</SelectItem>
-                        <SelectItem value="approved">Approved</SelectItem>
-                        <SelectItem value="rejected">Rejected</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                  <FormField
+                    control={form.control}
+                    name="original_nationality"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Original Nationality</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter original nationality" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="passport_number"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Passport Number</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter passport number" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              <FormField
-                control={form.control}
-                name="note"
-                render={({ field }) => (
-                  <FormItem className="col-span-3">
-                    <FormLabel>Note</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter any additional notes" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+                  <FormField
+                    control={form.control}
+                    name="passport_type"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Type of Passport</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter passport type" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-            <div className="flex justify-end space-x-4 mt-6">
-              <Button type="submit" variant="outline">
-                Save Application
-              </Button>
-              <Button type="submit">
-                Download JSON
-              </Button>
-            </div>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+                 
+                </CardContent>
+              </Card>
+
+            
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Manual Information</CardTitle>
+                </CardHeader>
+                <CardContent className="grid grid-cols-3 gap-4">
+                <FormField
+                    control={form.control}
+                    name="from_date"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>From Date</FormLabel>
+                        <FormControl>
+                          <Input type="date" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="to_date"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>To Date</FormLabel>
+                        <FormControl>
+                          <Input type="date" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  
+                 
+                   <FormField
+                    control={form.control}
+                    name="place_to_get_visa"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Place to Get Visa</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select visa location" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Vietnam embassy in Mumbai">Vietnam embassy in Mumbai</SelectItem>
+                            <SelectItem value="Vietnam embassy in Delhi">Vietnam embassy in Delhi</SelectItem>
+                            <SelectItem value="Vietnam embassy in Shanghai ">Vietnam embassy in Shanghai</SelectItem>
+                            <SelectItem value="Vietnam embassy in Beijing ">Vietnam embassy in Beijing</SelectItem>
+                            <SelectItem value="Vietnam embassy in Guangzhou">Vietnam embassy in Guangzhou</SelectItem>
+                            <SelectItem value="Vietnam embassy in Taiwan ">Vietnam embassy in Taiwan</SelectItem>
+                            <SelectItem value="Hanoi Airport">Hanoi Airport</SelectItem>
+                            <SelectItem value="Ho Chi Minh Airport">Ho Chi Minh Airport</SelectItem>
+                            <SelectItem value="Da Nang Airport">Da Nang Airport</SelectItem>
+                            <SelectItem value="Phuquoc Airport">Phuquoc Airport</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="speed"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Speed</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select Speed" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="4H">4H</SelectItem>
+                            <SelectItem value="8H">8H</SelectItem>
+                            <SelectItem value="1D">1D</SelectItem>
+                            <SelectItem value="2D">2D</SelectItem>
+                            <SelectItem value="3D">3D</SelectItem>
+                            <SelectItem value="NO">NO</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                   <FormField
+                    control={form.control}
+                    name="Duration"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Duration</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select Duration" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Single Entry">Single Entry</SelectItem>
+                            <SelectItem value="Mutiple Entry">Mutiple Entry</SelectItem>
+                            
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="status"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Status</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select Status" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="pending">Success</SelectItem>
+                            <SelectItem value="approved">Cancel</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="note"
+                    render={({ field }) => (
+                      <FormItem className="col-span-3">
+                        <FormLabel>Note</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Enter any additional notes" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                 
+                </CardContent>
+              </Card>
+              <div className="flex justify-end space-x-4">
+                <Button type="submit" variant="outline">
+                  Save Application
+                </Button>
+                <Button type="submit">
+                  Download Excel
+                </Button>
+              </div>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
     </div>
   );
 };

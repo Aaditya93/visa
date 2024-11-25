@@ -14,7 +14,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
-
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue ,SelectGroup,SelectLabel} from "@/components/ui/select";
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
@@ -56,7 +56,8 @@ const data: visa[] =[
     Creator: "Vaibhav",
     Created_date: "23-Nov",
     Created_time: "20:00",
-    Speed: "Urgent 4 hours",
+    Speed: "4H",
+    Handle_by: "Xia",
     Status: "Cancelled"
   },
   {
@@ -78,7 +79,8 @@ const data: visa[] =[
     Creator: "Nikhil",
     Created_date: "24-Nov",
     Created_time: "10:00",
-    Speed: "Urgent 4 hours",
+    Speed: "8H",
+    Handle_by: "Xia",
     Status: "success"
   },
   {
@@ -100,7 +102,8 @@ const data: visa[] =[
     Creator: "Victor",
     Created_date: "25-Nov",
     Created_time: "11:00",
-    Speed: "Urgent 2 days",
+    Speed: "2D",
+    Handle_by: "Xia",
     Status: "success"
   },
   {
@@ -122,7 +125,8 @@ const data: visa[] =[
     Creator: "Jena",
     Created_date: "24-Nov",
     Created_time: "10:30",
-    Speed: "Urgent 3 days",
+    Speed: "3D",
+    Handle_by: "Xia",
     Status: "success"
   },
   {
@@ -144,7 +148,8 @@ const data: visa[] =[
     Creator: "Jena",
     Created_date: "23-Nov",
     Created_time: "1:30",
-    Speed: "Urgent 3 days",
+    Speed: "NO",
+    Handle_by: "Xia",
     Status: "Cancelled"
   }
 
@@ -307,6 +312,13 @@ export const columns: ColumnDef<visa>[] = [
     ),
   },
   {
+    accessorKey: "Handle_by",
+    header: "Handle By",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("Handle_by")}</div>
+    ),
+  },
+  {
     accessorKey: "Speed",
     header: "Speed",
     cell: ({ row }) => (
@@ -364,6 +376,7 @@ export const columns: ColumnDef<visa>[] = [
 ]
 
 export function DataTableDemo() {
+  
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -394,14 +407,37 @@ export function DataTableDemo() {
   return (
     <div className="w-full">
       <div className="flex items-center py-4">
-        <Input
-          placeholder="Search..."
-          value={(table.getColumn("Full_name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("Full_name")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
+      <div className="flex items-center gap-4">
+  <Select>
+    <SelectTrigger className="w-[180px]">
+      <SelectValue placeholder="Select a Criteria" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectGroup>
+        <SelectLabel>Criteria</SelectLabel>
+        <SelectItem value="None">None</SelectItem>
+        <SelectItem value="At">At</SelectItem>
+        <SelectItem value="Between">Between</SelectItem>
+        <SelectItem value="Less Than">Less Than</SelectItem>
+        <SelectItem value="Less Than Or Equal">Less Than Or Equal</SelectItem>
+        <SelectItem value="Between Month">Between Month</SelectItem>
+        <SelectItem value="More Than">More Than</SelectItem>
+        <SelectItem value="More Than Or Equal">More Than Or Equal</SelectItem>
+        <SelectItem value="At Quater">At Quater</SelectItem>
+        <SelectItem value="Between Quater">Between Quater</SelectItem>
+        <SelectItem value="At Year">At Year</SelectItem>
+        <SelectItem value="Between Year">Between Year</SelectItem>
+      </SelectGroup>
+    </SelectContent>
+  </Select>
+  <Input type="date" placeholder="Date" className="w-[200px]" />
+  <Button className="px-4 py-2">Search</Button>
+</div>
+
+      
+                       
+            
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">

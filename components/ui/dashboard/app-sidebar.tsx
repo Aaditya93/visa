@@ -73,6 +73,10 @@ const data = {
             url: "#",
           },
           {
+            title: "Handled By",
+            url: "#",
+          },
+          {
             title: "Created Date",
             url: "#",
           },
@@ -90,17 +94,13 @@ const data = {
       icon: LiaCcVisa,
       items: [
         {
-          title: "Appected",
+          title: "Scuccess",
           url: "#",
         },
         {
-          title: "Rejected",
+          title: "Cancelled",
           url: "#",
-        },
-        {
-          title: "Pending",
-          url: "#",
-        },
+        }
       ],
     }
     // {
