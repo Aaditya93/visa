@@ -243,15 +243,26 @@ const VisaApplicationForm = () => {
                       </FormItem>
                     )}
                   />
-                     <FormField
+                   
+                   <FormField
                     control={form.control}
                     name="Handled_by"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Handled By</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Handled By" {...field} />
-                        </FormControl>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Handled By" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="Mr Sami">Mr Sami</SelectItem>
+                            <SelectItem value="Mr Xiaa">Mr Xiaa</SelectItem>
+                            <SelectItem value="Mr Seba">Mr Seba</SelectItem>
+                         
+                          </SelectContent>
+                        </Select>
                         <FormMessage />
                       </FormItem>
                     )}
